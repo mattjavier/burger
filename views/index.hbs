@@ -1,7 +1,52 @@
-<main class="container-fluid">
-  <div class="jumbotron jumbotron-fluid">
-    <section class="container-fluid text-center bg-danger">
+<main class="container-fluid bg-danger text-light">
+  <div class="jumbotron jumbotron-fluid bg-danger">
+    <header class="container-fluid text-center bg-danger">
       <h1 id="title" class="display-3">Eat-Da-Burger</h1>
-    </section>
+      <figure id="logoWrapper">
+        <img id="logo" src="./assets/burger-img.png" alt="Burger">
+      </figure>
+    </header>
+  </div>
+  <div class="container-fluid text-center bg-danger">
+    <div class="row justify-content-center">
+      <div class="col-sm-6">
+        <form>
+          <input id="burgerName" type="text" class="form-control form-control-lg shadow-lg p-3 mb-5 bg-white rounded-pill" placeholder="Burger Name">
+          <button id="addBurger" class="btn btn-lg btn-light text-danger bg-light shadow-lg p-3 mb-5 rounded-pill">Add Burger</button>
+        </form>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-md-6">
+        <div id="notDevoured">
+          <h2 class="sectionTitle">Not Devoured</h2>
+          {{#each burgers}}
+            {{#unless this.devoured}}
+            <div id="{{ this.id }}" class="burger-cards card text-danger shadow-lg p-3 mb-5 rounded-0">
+              <p class="card-text">{{ this.burger_name }}</p>
+              <div class="container-fluid text-center">
+                <button
+                  data-name="{{ this.burger_name }}" 
+                  class="devour btn btn-small btn-danger rounded-pill">Devour It</button>
+              </div>
+            </div>
+            {{/unless}}
+          {{/each}}
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div id="devoured">
+          <h2 class="sectionTitle">Devoured</h2>
+          {{#each burgers}}
+            {{#if this.devoured }}
+            <div id="{{ this.id }}" class="burger-cards card text-danger shadow-lg p-3 mb-5 rounded-0">
+              <p class="card-text">{{ this.burger_name }}</p>
+            </div>
+            {{/if}}
+          {{/each}}
+        </div>
+      </div>
+    </div>
   </div>
 </main>
