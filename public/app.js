@@ -30,7 +30,7 @@ document.addEventListener('click', event => {
     })
       .then(() => {
         let burgerElem = document.createElement('div')
-        burgerElem.classList = 'urger-cards card text-danger shadow-lg p-3 mb-5 rounded-0'
+        burgerElem.classList = 'burger-cards card text-danger shadow-lg p-3 mb-5 rounded-0'
         burgerElem.id = event.target.parentNode.parentNode.id
         burgerElem.innerHTML = `
           <p class="card-text">${event.target.dataset.name}</p>

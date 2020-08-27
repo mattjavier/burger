@@ -18,7 +18,7 @@ orm.insertOne = (table, data, cb) => {
 
 orm.updateOne = (table, updates, where, cb) => {
   db.query(`UPDATE ${table} SET ? WHERE ?`, [updates, where], err => {
-    if (err) { console.log(errr) }
+    if (err) { console.log(err) }
     cb()
   })
 }
