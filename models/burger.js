@@ -3,7 +3,7 @@ const orm = require('../config/orm.js')
 const model = {}
 
 model.read = cb => {
-  orm.getAll('burgers', burgers => cb(burgers))
+  orm.selectAll('burgers', burgers => cb(burgers))
 }
 
 model.create = (burger, cb) => {
