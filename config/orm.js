@@ -2,16 +2,25 @@ const db = require('./connection.js')
 
 const orm = {}
 
-orm.selectAll = () => {
-
+orm.selectAll = (table, cb) => {
+  db.query(`SELECT * FROM ${table}`, (err, data) => {
+    if (err) { console.log(err) }
+    cb(data)
+  })
 } 
 
-orm.insertOne = () => {
-
+orm.insertOne = (table, data, cb) => {
+  db.query(`INSERT INTO ${table} SET ?`, data, (err, fields) => {
+    if (err) { console.log(err) }
+    cb(data)
+  })
 }
 
-orm.updateOne = () => {
-
+orm.updateOne = (table, updates, where, cb) => {
+  db.query(`UPDATE ${table} SET ? WHERE ?`, [updates, where], err => {
+    if (err) { console.log(errr) }
+    cb()
+  })
 }
 
 module.exports = orm
