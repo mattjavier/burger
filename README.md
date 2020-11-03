@@ -8,7 +8,7 @@ The application was built using MySQL, Handlebars, and Express.
 
 ## Usage
 
-Eat-Da-Burger is deployed using Heroku. It can be view [here](https://mysterious-everglades-88130.herokuapp.com/)
+Eat-Da-Burger is deployed using Heroku. It can be viewed [here](https://mysterious-everglades-88130.herokuapp.com/).
 
 ## Testing
 
